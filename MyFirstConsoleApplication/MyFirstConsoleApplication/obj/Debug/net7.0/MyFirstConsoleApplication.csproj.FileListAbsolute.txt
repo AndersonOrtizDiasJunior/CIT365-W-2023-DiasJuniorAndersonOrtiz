@@ -1,0 +1,15 @@
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.csproj.AssemblyReference.cache
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.AssemblyInfoInputs.cache
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.AssemblyInfo.cs
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.csproj.CoreCompileInputs.cache
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/bin/Debug/net7.0/MyFirstConsoleApplication
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/bin/Debug/net7.0/MyFirstConsoleApplication.deps.json
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/bin/Debug/net7.0/MyFirstConsoleApplication.runtimeconfig.json
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/bin/Debug/net7.0/MyFirstConsoleApplication.dll
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/bin/Debug/net7.0/MyFirstConsoleApplication.pdb
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.dll
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/refint/MyFirstConsoleApplication.dll
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.pdb
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/MyFirstConsoleApplication.genruntimeconfig.cache
+/Users/andersondj/Anderson/BYUI/Winter 2023/dot Net/MyFirstConsoleApplication/MyFirstConsoleApplication/obj/Debug/net7.0/ref/MyFirstConsoleApplication.dll
