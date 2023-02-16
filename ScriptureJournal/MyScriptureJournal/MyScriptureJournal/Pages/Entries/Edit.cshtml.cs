@@ -35,6 +35,8 @@ namespace MyScriptureJournal.Pages.Entries
                 return NotFound();
             }
             Entry = entry;
+            Entry.Date = DateTime.Now;
+
             return Page();
         }
 
