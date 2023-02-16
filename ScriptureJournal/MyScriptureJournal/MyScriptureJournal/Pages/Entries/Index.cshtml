@@ -1,0 +1,56 @@
+@page
+@model MyScriptureJournal.Pages.Entries.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    string verseRange = "";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Scripture
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Annotation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+                @Html.DisplayFor(modelItem => item.Chapter):
+                @Html.DisplayFor(modelItem => item.InitialVerse)
+                @if (item.FinalVerse > item.InitialVerse)
+                {
+                        verseRange = $" - {item.FinalVerse}";
+                }
+               @verseRange
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annotation)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
