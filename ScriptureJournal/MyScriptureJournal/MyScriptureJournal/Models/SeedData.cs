@@ -38,7 +38,8 @@ public static class SeedData
                 },
                new MyScriptureJournal.Models.Entry
                                 {
-                                    Book = "Enos",                          
+                                    Book = "Enos",
+                                    Chapter = 1,
                                     Verses = "",
                                     Date = DateTime.Parse("2022-10-23"),
                                     Annotation = "This book teaches about the power of praying."
