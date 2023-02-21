@@ -18,5 +18,32 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: var(--bs-body-font-family);
+    color: var(--bs-body-color);
+    margin-bottom: 60px;
+}
+
+.cell {
+border-radius:15px;
+padding: 0 30px 0 0;
+}
+.cell .title {
+    font-size: 2em;
+}
+
+.date {
+font-size: .4em;
+}
+
+select, input {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--bs-body-color);
+    color: var(--bs-body-color);
+    padding:0 15px 0 3px;
+}
+
+.search .bar {
+width:100%;
+margin-bottom: 1%;
 }

@@ -7,70 +7,49 @@
         }</script>
 }
 
+<h1>Entries</h1>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
-<form>
+<form class="search">
     <p>
-        Book:
-        <select asp-for="EntryBook" asp-items="Model.Books">
-            <option value="">All</option>
-        </select>
-        Notes: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+      <input type="text" asp-for="SearchString" class="bar"/> <br>
+      <input type="submit" value="Search" class="btn btn-primary"/>
     </p>
 </form>
 
 <form>
     <p>
+        Book:
+        <select asp-for="EntryBook" asp-items="Model.Books" onchange="submitSort()">
+            <option value="">All</option>
+        </select>
         Sort by:
         <select asp-for="sortByDate" onchange="submitSort()">
             <option value="true">Date</option>
             <option value="false">Book</option>
         </select>
     </p>
+    <a asp-page="Create" class="btn btn-primary">Add New</a>
 </form>
+<div class="entries">
+    @foreach (var item in Model.Entry)
+    {
+        <div class="cell">
+            <div class="title">
+                <span class="date">@Html.DisplayFor(modelItem => item.Date)</span><br>
+                @Html.DisplayFor(modelItem => item.Book)
+                @Html.DisplayFor(modelItem => item.Chapter):
+                @Html.DisplayFor(modelItem => item.Verses)
+            </div>
+            <div class="note">
+                @Html.DisplayFor(modelItem => item.Annotation)
+            </div>
+                <div class="buttons">
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Edit</a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Details</a> 
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Delete</a>
+                </div> 
+        </div>
+        <br>
+    }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Scripture
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Annotation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Entry)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Book)
-                    @Html.DisplayFor(modelItem => item.Chapter):
-                    @Html.DisplayFor(modelItem => item.Verses)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Annotation)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+</div>
