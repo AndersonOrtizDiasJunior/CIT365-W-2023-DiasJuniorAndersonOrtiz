@@ -29,14 +29,23 @@ namespace MyScriptureJournal.Pages.Entries
         [BindProperty(SupportsGet = true)]
         public string? EntryBook { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public bool sortByDate { get; set; }
+
         public async Task OnGetAsync()
         {
             IQueryable<string> bookQuery = from e in _context.Entry
                                             orderby e.Book
                                             select e.Book;
-
+            
             var entries = from e in _context.Entry
                          select e;
+            //if (sortByDate)
+            //{
+            //    entries = from e in _context.Entry
+            //              orderby e.Date
+            //              select e;
+            //}
 
             if (!string.IsNullOrEmpty(SearchString))
             {
@@ -47,6 +56,15 @@ namespace MyScriptureJournal.Pages.Entries
             {
                 entries = entries.Where(x => x.Book == EntryBook);
             }
+
+            if (sortByDate)
+            {
+                entries = entries.OrderBy(s => s.Date);
+            } else
+            {
+                entries = entries.OrderBy(s => s.Book);
+            }
+
             Books = new SelectList(await bookQuery.Distinct().ToListAsync());
             Entry = await entries.ToListAsync();
         }
