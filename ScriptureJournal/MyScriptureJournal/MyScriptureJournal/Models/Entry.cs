@@ -14,13 +14,9 @@ namespace MyScriptureJournal.Models
             public string Book { get; set; } = string.Empty;
 
 
-            public int Chapter { get; set; } = 1;
+        public int Chapter { get; set; }
 
-
-            [Display(Name = "Verse")]
-            public int InitialVerse { get; set; }
-
-            public int FinalVerse { get; set; }
+            public string Verses { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; } = DateTime.Now;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyScriptureJournal.Models;
 
@@ -20,12 +21,34 @@ namespace MyScriptureJournal.Pages.Entries
 
         public IList<Entry> Entry { get;set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public SelectList? Books { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? EntryBook { get; set; }
+
         public async Task OnGetAsync()
         {
-            if (_context.Entry != null)
+            IQueryable<string> bookQuery = from e in _context.Entry
+                                            orderby e.Book
+                                            select e.Book;
+
+            var entries = from e in _context.Entry
+                         select e;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Entry = await _context.Entry.ToListAsync();
+                entries = entries.Where(s => s.Annotation.ToLower().Contains(SearchString.ToLower()));
             }
+
+            if (!string.IsNullOrEmpty(EntryBook))
+            {
+                entries = entries.Where(x => x.Book == EntryBook);
+            }
+            Books = new SelectList(await bookQuery.Distinct().ToListAsync());
+            Entry = await entries.ToListAsync();
         }
     }
 }

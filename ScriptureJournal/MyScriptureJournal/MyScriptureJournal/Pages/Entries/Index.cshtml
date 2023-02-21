@@ -1,16 +1,23 @@
 @page
 @model MyScriptureJournal.Pages.Entries.IndexModel
 
-@{
-    ViewData["Title"] = "Index";
-    string verseRange = "";
-}
-
 <h1>Index</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        Book:
+        <select asp-for="EntryBook" asp-items="Model.Books">
+            <option value="">All</option>
+        </select>
+        Notes: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -32,12 +39,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Book)
                 @Html.DisplayFor(modelItem => item.Chapter):
-                @Html.DisplayFor(modelItem => item.InitialVerse)
-                @if (item.FinalVerse > item.InitialVerse)
-                {
-                        verseRange = $" - {item.FinalVerse}";
-                }
-               @verseRange
+                @Html.DisplayFor(modelItem => item.Verses)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

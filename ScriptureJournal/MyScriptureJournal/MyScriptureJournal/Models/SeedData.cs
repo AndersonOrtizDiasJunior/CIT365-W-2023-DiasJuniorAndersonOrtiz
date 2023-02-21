@@ -24,8 +24,7 @@ public static class SeedData
                 {
                     Book = "2 Nephi",
                     Chapter = 25,
-                    InitialVerse = 26,
-                    FinalVerse = 26,
+                    Verses = "26",
                     Date = DateTime.Parse("2021-2-12"),
                     Annotation = "Problaby the verse that repeat the word 'Christ' more times on all the scriptures."
                 },
@@ -33,17 +32,14 @@ public static class SeedData
                 {
                     Book = "1 Nephi",
                     Chapter = 3,
-                    InitialVerse = 7,
-                    FinalVerse = 7,
+                    Verses = "7",                 
                     Date = DateTime.Parse("2009-3-16"),
                     Annotation = "The most know verse of the Book of Mormon."
                 },
                new MyScriptureJournal.Models.Entry
                                 {
-                                    Book = "Enos",
-                                    Chapter = 1,
-                                    InitialVerse = 1,
-                                    FinalVerse = 27,
+                                    Book = "Enos",                          
+                                    Verses = "",
                                     Date = DateTime.Parse("2022-10-23"),
                                     Annotation = "This book teaches about the power of praying."
                                 },
@@ -51,8 +47,7 @@ public static class SeedData
                 {
                     Book = "3 Nephi",
                     Chapter = 11,
-                    InitialVerse = 8,
-                    FinalVerse = 10,
+                    Verses = "8 - 10",
                     Date = DateTime.Parse("2000-3-19"),
                     Annotation = "Christ appear to the nephites the first time."
                 }
